@@ -33,13 +33,14 @@
 ![生成依赖项](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/settings_4.png)   
 在弹出窗口中勾选masm   
 ![勾选nasm](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/settings_5.png)   
+
 在更改的项目的源文件文件夹上右键 -> 添加 -> 现有项   
 选择在/src中下载的extapi.cpp与impapi.asm(建议先把它们放入工作文件夹中)   
 (注：这两个文件实现了对Win XP新增api的补充，来自[一个stackoverflow的回答](https://stackoverflow.com/questions/19516796/visual-studio-2012-win32-project-targeting-windows-2000)，若有版权/开源协议问题请及时联系我)   
 
-
 在要更改的项目上右键 -> 属性   
-- 链接器 -> 高级 -> 映像具有安全异常处理程序 -> 否   
+- 链接器 -> 高级 -> 映像具有安全异常处理程序 -> 否  
+ 
 可选内容(减小可执行文件大小):   
 - 链接器 -> 清单文件 -> 生成清单 -> 否 (如果有uac需要则“生成清单必须为“是”)   
 - 链接器 -> 调试 -> 生成调试信息 -> 否   
@@ -48,3 +49,10 @@
 微软不允许链接器 -> 系统 -> 所需的最低版本 低于5.01   
 所以需要手动编辑二进制文件   
 
+使用任意二进制编辑器打开生成的.exe文件   
+找到ASCII"PE"对应的 0x50 0x45(每个文件不同)   
+![寻找版本信息](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/edit_1.png)   
+在这个0x50对应的地址上加0x40就是版本信息所在的地址   
+将两个0x50 0x00 0x01 0x00改为 0x40 0x00 0x00 0x00   
+![更改版本信息](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/edit_2.png)   
+保存  
