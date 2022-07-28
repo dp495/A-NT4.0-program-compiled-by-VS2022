@@ -1,5 +1,6 @@
 # A-NT4.0-program-compiled-by-VS2022
-使用VS2022编译适用于早期Windows系统的二进制文件的例子与教程
+使用VS2022编译适用于早期Windows系统的程序的例子与教程   
+适用于:Win Vista、Win XP、Win 2000、Win 98、Win NT4.0   
 
 ## 教程部分
 ### 一、在VS2022中添加对Win XP的支持
