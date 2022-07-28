@@ -32,7 +32,7 @@
    
 此时应该可以正常编译大多数项目了（建议在这里测试成功再继续）  
 如果对更早的兼容性没有要求就可以在这里停下了   
-更多的兼容性异常解决方法请看[这里](https://blog.csdn.net/chy555chy/article/details/123399974)  
+更多的兼容性异常解决方法请看[这里](https://blog.csdn.net/chy555chy/article/details/123399974)以及文末的常见问题  
 
 ### 二、添加对早期系统的支持(最早到WinNT4.0/Win98)
 
