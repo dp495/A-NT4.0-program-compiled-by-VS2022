@@ -76,11 +76,11 @@
 ### 三、运行效果   
 
 - NT4.0   
-![例1](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/result_1.png)   
+![例1](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/results_1.png)   
 - Win XP   
-![例2](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/result_2.png)    
+![例2](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/results_2.png)    
 - Win 10 x64   
-![例3](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/result_3.png)   
+![例3](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/results_3.png)   
    
 
 ### 四、已知问题
@@ -96,4 +96,6 @@
 2. 上文添加的代码补充了大多数常用API(包括Unicode)，但是并不是全部   
 有些API也没必要在老系统上实现(如多线程相关API)   
 遇到运行时找不到接入点的问题请在Pull requsets上提出并附上截图   
-如果能顺手贴上解决的代码就更好了(笑)   
+如果能顺手贴上解决的代码就更好了(笑)  
+   
+**如果这对你有用，不妨点个Star**
