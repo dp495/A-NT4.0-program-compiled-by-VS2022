@@ -35,14 +35,14 @@
 
 ### 二、添加对早期系统的支持(最早到WinNT4.0/Win98)
 
-#### 1.添加nasm   
+#### 1.添加masm   
 在更改的项目上右键 -> 生成依赖项 -> 自定义   
 ![生成依赖项](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/settings_4.png)   
 在弹出窗口中勾选masm   
 ![勾选nasm](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/settings_5.png)   
    
 
-#### 2.添加补充早期项目中缺失的API   
+#### 2.添加补充早期项目中缺失的API的代码   
 在更改的项目的源文件文件夹上右键 -> 添加 -> 现有项   
 选择在/src中下载的extapi.cpp与impapi.asm(建议先把它们放入工作文件夹中)   
 (注：这两个文件实现了对Win XP新增api的补充，来自[一个stackoverflow的回答](https://stackoverflow.com/questions/19516796/visual-studio-2012-win32-project-targeting-windows-2000)，若有版权/开源协议问题请及时在Issues里指出)   
@@ -78,4 +78,22 @@
 - NT4.0   
 ![例1](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/result_1.png)   
 - Win XP   
-![例2](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/result_2.png)   
+![例2](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/result_2.png)    
+- Win 10 x64   
+![例3](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/result_3.png)   
+   
+
+### 四、已知问题
+
+1. 链接器报error LNK2001: 无法解析的外部符号   
+解决方法：在MSDN上查询该函数需要的静态库(以User32.lib为例)   
+并在文件最前方添加以下代码再编译即可   
+~~~c
+#pragma comment (lib,"User32.lib")
+~~~
+      
+
+2. 上文添加的代码补充了大多数常用API(包括Unicode)，但是并不是全部   
+有些API也没必要在老系统上实现(如多线程相关API)   
+遇到运行时找不到接入点的问题请在Pull requsets上提出并附上截图   
+如果能顺手贴上解决的代码就更好了(笑)   
