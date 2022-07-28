@@ -19,13 +19,16 @@
 名称不要太长且最好具有辨识度  
 ![新建](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/settings_2.png)  
 切换到创建的配置并把架构改为x86(顶端菜单下的一排中的两个下拉菜单)  
+   
 
+#### 3.修改该配置   
 在旁侧的解决方案资源管理器在要更改的项目上右键 -> 属性  
 ![属性](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/settings_3.png)
 - 配置属性 -> 常规 -> 平台工具集 -> Visual Studio 2017 - Window XP (v141_xp)   
 - 配置属性 -> 高级 -> MFC的使用 -> 在静态库中使用MFC  
 - C/C++ -> 语言 -> 符合模式 -> 否  
-
+   
+   
 此时应该可以正常编译大多数项目了（建议在这里测试成功再继续）  
 如果对更早的兼容性没有要求就可以在这里停下了   
 更多的兼容性异常解决方法请看[这里](https://blog.csdn.net/chy555chy/article/details/123399974)  
@@ -71,6 +74,7 @@
    
 
 ### 三、运行效果   
+
 - NT4.0   
 ![例1](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/result_1.png)   
 - Win XP   
