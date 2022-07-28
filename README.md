@@ -4,7 +4,7 @@
 ## 教程部分
 ### 一、在VS2022中添加对Win XP的支持
 
-####1.为VS添加组件
+#### 1.为VS添加组件
 在开始菜单中找到Microsoft Visual Studio Installer并打开   
 ![开始菜单中的Visual Studio](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/open%20vs%20installer.png)
 
@@ -13,7 +13,7 @@
 ![需要的条目](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/add%20packs_2.png)  
    
 
-####2.为项目添加支持WinXP的配置   
+#### 2.为项目添加支持WinXP的配置   
 安装完成后打开要编译的项目，在顶端菜单中选择“生成”->配置管理器，按图示操作  
 ![配置管理器](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/settings_1.png)  
 名称不要太长且最好具有辨识度  
@@ -32,20 +32,20 @@
 
 ### 二、添加对早期系统的支持(最早到WinNT4.0/Win98)
 
-####1.添加nasm   
+#### 1.添加nasm   
 在更改的项目上右键 -> 生成依赖项 -> 自定义   
 ![生成依赖项](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/settings_4.png)   
 在弹出窗口中勾选masm   
 ![勾选nasm](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/settings_5.png)   
    
 
-####2.添加补充早期项目中缺失的API   
+#### 2.添加补充早期项目中缺失的API   
 在更改的项目的源文件文件夹上右键 -> 添加 -> 现有项   
 选择在/src中下载的extapi.cpp与impapi.asm(建议先把它们放入工作文件夹中)   
 (注：这两个文件实现了对Win XP新增api的补充，来自[一个stackoverflow的回答](https://stackoverflow.com/questions/19516796/visual-studio-2012-win32-project-targeting-windows-2000)，若有版权/开源协议问题请及时在Issues里指出)   
    
 
-####3.修改项目配置   
+#### 3.修改项目配置   
 在要更改的项目上右键 -> 属性   
 - 链接器 -> 高级 -> 映像具有安全异常处理程序 -> 否  
  
@@ -57,7 +57,7 @@
 保存此配置并生成一个.exe文件   
    
 
-####4.更改PE文件头中的版本信息   
+#### 4.更改PE文件头中的版本信息   
 微软不允许链接器 -> 系统 -> 所需的最低版本 低于5.01(详见[这里](https://docs.microsoft.com/en-us/cpp/build/reference/subsystem-specify-subsystem?view=msvc-170))   
 所以需要手动编辑.exe文件的PE文件头   
 
@@ -70,7 +70,7 @@
 保存即可   
    
 
-###三、运行效果   
+### 三、运行效果   
 - NT4.0   
 ![例1](https://github.com/dp495/A-NT4.0-program-compiled-by-VS2022/blob/main/Pictures/result_1.png)   
 - Win XP   
