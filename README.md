@@ -1,6 +1,11 @@
 # A-NT4.0-program-compiled-by-VS2022
 使用VS2022编译适用于早期Windows系统的程序的例子与教程   
 适用于:Win Vista、Win XP、Win 2000、Win 98、Win NT4.0   
+> 突然发现使用Mingw_w64(gcc 12.1)编译可以直接适配到NT4.0   
+在[这里](https://github.com/niXman/mingw-builds-binaries)贴上Mingw_w64在Github的项目(目前还在滚动更新)   
+小项目直接用gcc会很方便 :]   
+~~我感觉自己像个傻子一样折腾了半天msvc~~   
+
 
 ## 教程部分
 ### 一、在VS2022中添加对Win XP的支持
