@@ -3,7 +3,9 @@
 适用于:Win Vista、Win XP、Win 2000、Win 98、Win NT4.0   
 > 突然发现使用Mingw_w64最新版(gcc 12.1)编译仍然可以直接适配到NT4.0   
 在[这里](https://github.com/niXman/mingw-builds-binaries)贴上Mingw_w64在Github的项目(目前还在滚动更新)   
-小项目直接用gcc会很方便 :]   
+小项目直接用gcc会很方便 :]
+编译的32位程序如果无法定位接入点，那么就将文中提到的两个文件在编译时附上(得先用nsam将.asm编译成.o文件)   
+不要使用_s函数(例：把scanf_s换成scanf)   
 ~~我感觉自己像个傻子一样折腾了半天msvc~~   
 
 
