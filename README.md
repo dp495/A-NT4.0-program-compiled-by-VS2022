@@ -2,7 +2,11 @@
 使用VS2022编译适用于早期Windows系统的程序的例子与教程   
 适用于:Win Vista、Win XP、Win 2000、Win 98、Win NT4.0   
 
-> 使用gcc或者tcc编译，若未调用新的系统api,则二进制文件可以直接在NT4.0上运行   
+>显然的，不要使用_s函数(例：把scanf_s换成scanf)  
+
+## 如果不用MSVC呢？
+
+使用gcc或者tcc编译，若未调用新的系统api,则二进制文件可以直接在NT4.0上运行   
 [Mingw-w64项目提供的gcc](https://github.com/niXman/mingw-builds-binaries)，选择i686版(32位)，线程模型选Win32，运行库选Msvcrt
 
 若想减小生成的二进制文件大小，可以只用gcc编译，不链接：
@@ -21,8 +25,6 @@ crinkler /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE:NO /TINYHEADER /NODEFAULTLIB /LIB
 
 > 较小的程序直接用tcc会很方便，但tcc没有优化选项。tcc链接器使用的PE格式与msvc、gcc不同，不能通用。   
 ~~我感觉自己像个傻子一样折腾了半天msvc~~  
-
->显然的，不要使用_s函数(例：把scanf_s换成scanf)   
 
 
 ## 教程部分
