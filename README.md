@@ -1,12 +1,28 @@
 # A-NT4.0-program-compiled-by-VS2022
 使用VS2022编译适用于早期Windows系统的程序的例子与教程   
 适用于:Win Vista、Win XP、Win 2000、Win 98、Win NT4.0   
+
 > 使用gcc或者tcc编译，若未调用新的系统api,则二进制文件可以直接在NT4.0上运行   
 [Mingw-w64项目提供的gcc](https://github.com/niXman/mingw-builds-binaries)，选择i686版(32位)，线程模型选Win32，运行库选Msvcrt
-小项目直接用tcc会很方便 :]   
-编译的32位程序如果无法定位接入点，那么就将文中提到的两个文件在编译时附上(得先用nsam将.asm编译成.o文件)   
-不要使用_s函数(例：把scanf_s换成scanf)   
-~~我感觉自己像个傻子一样折腾了半天msvc~~   
+
+若想减小生成的二进制文件大小，可以只用gcc编译，不链接：
+```
+gcc -m32 -Os -s -fno-ident -fno-stack-protector -fomit-frame-pointer -fno-unwind-tables -fno-asynchronous-unwind-tables src.c -c -o c.o
+```
+然后用旧版本的微软连接器链接（这里使用的是vc++4.2的链接器，命令略与现代版本不同）：
+```
+vclink /MACHINE:IX86 /OPT:REF /NODEFAULTLIB /SUBSYSTEM:WINDOWS /LIBPATH:path\to\lib kernel32.lib Advapi32.lib msvcrt.lib c.o /OUT:bin.exe
+```
+或者使用[crinkler](https://github.com/runestubbe/Crinkler)：
+```
+crinkler /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE:NO /TINYHEADER /NODEFAULTLIB /LIBPATH:path\to\lib kernel32.lib Advapi32.lib msvcrt.lib user32.lib c.o /OUT:bin.exe
+```
+注：上述命令中出现的选项大都是为了减小二进制文件大小，作者查阅过很多资料但不保证最优。建议自行查阅资料了解上述选项。
+
+> 较小的程序直接用tcc会很方便，但tcc没有优化选项。tcc链接器使用的PE格式与msvc、gcc不同，不能通用。   
+~~我感觉自己像个傻子一样折腾了半天msvc~~  
+
+>显然的，不要使用_s函数(例：把scanf_s换成scanf)   
 
 
 ## 教程部分
