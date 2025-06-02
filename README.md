@@ -6,7 +6,7 @@
 
 ## 如果不用MSVC呢？
 
-使用gcc或者tcc编译，若未调用新的系统api，** 则二进制文件可以直接在NT4.0及之后的系统上运行 **  
+使用gcc或者tcc编译，若未调用新的系统api， **则二进制文件可以直接在NT4.0及之后的系统上运行**  
 [Mingw-w64项目提供的gcc](https://github.com/niXman/mingw-builds-binaries)，选择i686版(32位)，线程模型选Win32，运行库选Msvcrt
 
 若想减小生成的二进制文件大小，可以只用gcc编译，不链接：
